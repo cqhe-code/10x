@@ -18,7 +18,9 @@ docker run -p 80:9090 -d 10xgenom
 
 # Query
 url: `localhost:80/query` 
+
 params:
+
     - date: YYYY-MM-DD, optional
 
     - type: weather type string, one of sun/drizzle/rain/snow/fog 
