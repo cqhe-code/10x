@@ -63,7 +63,7 @@ class WeatherDataQuery:
         return s
     
 if __name__ == "__main__":
-    path = "data/seattle-weather.csv"
+    path = "server/data/seattle-weather.csv"
     import os
     print(os.getcwd())
     data_reader = WeatherDataReader(path)

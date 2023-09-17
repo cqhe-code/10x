@@ -2,12 +2,27 @@
 
 Create a web service that converts a CSV file into an API that exposes JSON.
 
-Download and run docker image:
+# Run Web Server locally
+Pull and run docker image:
 ```
 docker pull cqhecode/10x
 docker run -p 80:9090 -d cqhecode/10x
 ```
 
+or build from server folder:
+```
+cd server
+docker build -t 10xgenom 
+docker run -p 80:9090 -d 10xgenom
+```
+
+# Query
+url: `localhost:80/query` 
+params:
+    - date: in YYYY-MM-DD format
+    - type: weather type, sun/drizzle/rain/snow/fog 
+    - 
+###Sample queries
 >GET localhost:80/query?date=2012-09-20
 ```
 {
