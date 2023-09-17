@@ -19,10 +19,38 @@ docker run -p 80:9090 -d 10xgenom
 # Query
 url: `localhost:80/query` 
 params:
-    - date: in YYYY-MM-DD format
-    - type: weather type, sun/drizzle/rain/snow/fog 
-    - 
-###Sample queries
+    - date: YYYY-MM-DD, optional
+
+    - type: weather type string, one of sun/drizzle/rain/snow/fog 
+    
+    - limit: int, default returns all
+
+200 response:
+```
+{
+    result: [
+        {
+            "date": "Thu, 20 Sep 2012 00:00:00 GMT",
+            "precipitation": 0.0,
+            "temp_max": 19.4,
+            "temp_min": 10.0,
+            "weather": "drizzle",
+            "wind": 2.5
+        },
+    ...
+    ]
+}
+```
+
+400 response:
+```
+{
+    "code": 400,
+    "error": "ValueError(\"time data 'asdf-09-20' does not match format '%Y-%m-%d'\")"
+}
+```
+
+### Sample queries
 >GET localhost:80/query?date=2012-09-20
 ```
 {
